@@ -16,7 +16,7 @@ jobs:
       - name: multi-line scripts
         run: |
           echo "Hello 1 from multiline"
-          echo "Hello 2 from multiline""
+          echo "Hello 2 from multiline"
       - name: List file
         run: ls ${{ github.workspace }}
       - name: Print github context
