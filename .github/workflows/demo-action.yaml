@@ -1,0 +1,27 @@
+name: Github action practice
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Started workflow"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: one-line script
+        run: echo "Hello one-line script"
+      - name: multi-line scripts
+        run: |
+          echo "Hello 1 from multiline"
+          echo "Hello 2 from multiline""
+      - name: List file
+        run: ls ${{ github.workspace }}
+      - name: Print github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "${{GITHUB_CONTEXT}}"
+      - name: Action complete
+        run: echo "Github action complete"
