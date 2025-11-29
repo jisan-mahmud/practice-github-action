@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/practice-github-action
+          images: ${{ secrets.DOCKER_USERNAME }}/practice-github-action
 
 
       - name: Set up Docker Buildx
